@@ -17,20 +17,22 @@
     ],
     "require": {
         "php": "^7.1",
+        "guzzlehttp/guzzle": "^6.5",
         "illuminate/support": "^6.0"
     },
     "require-dev": {
         "orchestra/testbench": "^4.0",
-        "phpunit/phpunit": "^8.0"
+        "phpunit/phpunit": "^8.0",
+        "spatie/phpunit-watcher": "^1.22"
     },
     "autoload": {
         "psr-4": {
-            "Marksitko\\LaravelUnsplash\\": "src"
+            "MarkSitko\\LaravelUnsplash\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Marksitko\\LaravelUnsplash\\Tests\\": "tests"
+            "MarkSitko\\LaravelUnsplash\\Tests\\": "tests"
         }
     },
     "scripts": {
@@ -44,10 +46,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Marksitko\\LaravelUnsplash\\LaravelUnsplashServiceProvider"
+                "MarkSitko\\LaravelUnsplash\\UnsplashServiceProvider"
             ],
             "aliases": {
-                "LaravelUnsplash": "Marksitko\\LaravelUnsplash\\LaravelUnsplashFacade"
+                "Unsplash": "MarkSitko\\LaravelUnsplash\\UnsplashFacade"
             }
         }
     }

@@ -1,13 +1,13 @@
 <?php
 
-namespace Marksitko\LaravelUnsplash;
+namespace MarkSitko\LaravelUnsplash;
 
 use Illuminate\Support\Facades\Facade;
 
 /**
- * @see \Marksitko\LaravelUnsplash\Skeleton\SkeletonClass
+ * @see \MarkSitko\LaravelUnsplash\Unsplash
  */
-class LaravelUnsplashFacade extends Facade
+class UnsplashFacade extends Facade
 {
     /**
      * Get the registered name of the component.
@@ -16,6 +16,6 @@ class LaravelUnsplashFacade extends Facade
      */
     protected static function getFacadeAccessor()
     {
-        return 'laravel-unsplash';
+        return 'unsplash';
     }
 }
