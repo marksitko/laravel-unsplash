@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 use MarkSitko\LaravelUnsplash\API\UnsplashAPI;
 use MarkSitko\LaravelUnsplash\Http\HttpClient;
+use MarkSitko\LaravelUnsplash\Models\UnsplashAsset;
 
 class Unsplash extends HttpClient
 {
@@ -104,7 +105,8 @@ class Unsplash extends HttpClient
      */
     public function store($name = null, $key = 'small')
     {
-        if (!array_key_exists('urls', $this->toJson())) {
+        $response = $this->toJson();
+        if (!array_key_exists('urls', $response)) {
             throw new Exception('Photo can not be stored. Certainly the "urls" key is missing or you try to store an photo while retrieving multiple photos.');
         }
 
@@ -113,7 +115,7 @@ class Unsplash extends HttpClient
         }
 
         $name = $name ?? Str::random(24);
-        $image = file_get_contents($this->toJson()['urls'][$key]);
+        $image = file_get_contents($response['urls'][$key]);
 
         while ($this->storage->exists("{$name}.jpg")) {
             $name = Str::random(24);
@@ -121,7 +123,12 @@ class Unsplash extends HttpClient
 
         $this->storage->put("{$name}.jpg", $image);
 
-        return $name;
+        return UnsplashAsset::create([
+            'unsplash_id' => $response['id'],
+            'name' => "{$name}.jpg",
+            'author' => $response['user']['name'],
+            'author_link' => $response['user']['links']['html'],
+        ]);
     }
 
     /**

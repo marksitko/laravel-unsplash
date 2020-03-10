@@ -11,13 +11,18 @@ use MarkSitko\LaravelUnsplash\Endpoints\Collections;
 
 trait UnsplashAPI
 {
-    use
-    QueryBuilder,
-    Users,
-    Photos,
-    Search,
-    Collections,
-    Stats;
+    use QueryBuilder,
+        Users,
+        Photos,
+        Search,
+        Collections,
+        Stats;
 
+    /**
+     * Associative array with the HTTP verb
+     * and the endpoint
+     *
+     * @var array
+     */
     public $apiCall;
 }
