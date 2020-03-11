@@ -30,9 +30,14 @@ class Unsplash extends HttpClient
     protected $storage;
 
     /**
-     * Guzze response.
+     * Guzzle response.
      */
     protected $response;
+
+    /**
+     * Storage disk to store photos.
+     */
+    protected $storeInDatabase;
 
     /**
      * Creates a new instance of Unsplash.
@@ -123,12 +128,16 @@ class Unsplash extends HttpClient
 
         $this->storage->put("{$name}.jpg", $image);
 
-        return UnsplashAsset::create([
-            'unsplash_id' => $response['id'],
-            'name' => "{$name}.jpg",
-            'author' => $response['user']['name'],
-            'author_link' => $response['user']['links']['html'],
-        ]);
+        if ($this->storeInDatabase) {
+            return UnsplashAsset::create([
+                'unsplash_id' => $response['id'],
+                'name' => "{$name}.jpg",
+                'author' => $response['user']['name'],
+                'author_link' => $response['user']['links']['html'],
+            ]);
+        }
+
+        return $name;
     }
 
     /**
@@ -152,6 +161,7 @@ class Unsplash extends HttpClient
     private function initalizeConfiguration()
     {
         $this->storage = Storage::disk(config('unsplash.disk', 'local'));
+        $this->storeInDatabase = config('unsplash.store_in_database', false);
 
         return $this;
     }

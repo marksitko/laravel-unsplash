@@ -2,7 +2,6 @@
 
 namespace MarkSitko\LaravelUnsplash\Tests;
 
-use Mockery;
 use Orchestra\Testbench\TestCase;
 use Illuminate\Support\Facades\Config;
 use MarkSitko\LaravelUnsplash\Unsplash;
