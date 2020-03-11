@@ -1,12 +1,6 @@
 # Powerful Unsplash package for Laravel
 
-Provides a nice and fluent API to use the Unsplash API within Laravel applications. Use public actions direkt from the API, store images in your storage or use the database connector to persists automatically copyright informations etc. about the image. 
-
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/marksitko/laravel-unsplash.svg?style=flat-square)](https://packagist.org/packages/marksitko/laravel-unsplash)
-[![Build Status](https://img.shields.io/travis/marksitko/laravel-unsplash/master.svg?style=flat-square)](https://travis-ci.org/marksitko/laravel-unsplash)
-[![Quality Score](https://img.shields.io/scrutinizer/g/marksitko/laravel-unsplash.svg?style=flat-square)](https://scrutinizer-ci.com/g/marksitko/laravel-unsplash)
-[![Total Downloads](https://img.shields.io/packagist/dt/marksitko/laravel-unsplash.svg?style=flat-square)](https://packagist.org/packages/marksitko/laravel-unsplash)
-
+Provides a nice and fluent API to use the Unsplash API within Laravel applications. Use public actions direkt from the API, store images in your storage or use your database to persists all copyright informations etc. about the image. 
 
 ## Install
 
@@ -14,7 +8,7 @@ Provides a nice and fluent API to use the Unsplash API within Laravel applicatio
 $ composer require marksitko/laravel-unsplash
 ```
 
-The package provides package discovery and Laravel will automatically register the service provider and facade. If you want add it manually you have to do it provide in your `config/app.php`
+The package provides package discovery and Laravel will automaticly register the service provider and facade. If you want add it manually you have to do it provide in you `config/app.php`
 
 **Service provider**
 ``` php 
@@ -213,11 +207,3 @@ User::unsplash()->save($unsplashAsset);
 // retrive all related unsplash assets
 User::find($userId)->unsplash();
 ```
-
-## License
-
-The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
-
-## Laravel Package Boilerplate
-
-This package was generated using the [Laravel Package Boilerplate](https://laravelpackageboilerplate.com).
