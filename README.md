@@ -8,10 +8,12 @@ Provides a nice and fluent API to use the Unsplash API within Laravel applicatio
 [![Total Downloads](https://img.shields.io/packagist/dt/marksitko/laravel-unsplash.svg?style=flat-square)](https://packagist.org/packages/marksitko/laravel-unsplash)
 
 
+## Package is currently in development mode and not stable! 
+
 ## Install
 
 ``` bash
-$ composer require marksitko/laravel-unsplash
+$ composer require marksitko/laravel-unsplash:0.1.0-beta
 ```
 
 The package provides package discovery and Laravel will automatically register the service provider and facade. If you want add it manually you have to do it provide in your `config/app.php`
