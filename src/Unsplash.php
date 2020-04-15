@@ -79,9 +79,21 @@ class Unsplash extends HttpClient
     /**
      * Returns the http response body.
      *
-     * @return array
+     * @return object
      */
     public function toJson()
+    {
+        $this->buildResponse();
+
+        return json_decode($this->response->getBody()->getContents());
+    }
+
+    /**
+     * Returns the http response body.
+     *
+     * @return array
+     */
+    public function toArray()
     {
         $this->buildResponse();
 
@@ -110,7 +122,7 @@ class Unsplash extends HttpClient
      */
     public function store($name = null, $key = 'small')
     {
-        $response = $this->toJson();
+        $response = $this->toArray();
         if (!array_key_exists('urls', $response)) {
             throw new Exception('Photo can not be stored. Certainly the "urls" key is missing or you try to store an photo while retrieving multiple photos.');
         }

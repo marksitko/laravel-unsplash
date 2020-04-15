@@ -1,6 +1,6 @@
 # Powerful Unsplash package for Laravel
 
-Provides a nice and fluent API to use the Unsplash API within Laravel applications. Use public actions direkt from the API, store images in your storage or use the database connector to persists automatically copyright informations etc. about the image. 
+Provides a fluent api to use the Unsplash API within Larvel applications. Use public actions or store images directly in your storage and persists all copyright informations automatically with the databse connector.
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/marksitko/laravel-unsplash.svg?style=flat-square)](https://packagist.org/packages/marksitko/laravel-unsplash)
 [![Build Status](https://img.shields.io/travis/marksitko/laravel-unsplash/master.svg?style=flat-square)](https://travis-ci.org/marksitko/laravel-unsplash)
@@ -8,12 +8,10 @@ Provides a nice and fluent API to use the Unsplash API within Laravel applicatio
 [![Total Downloads](https://img.shields.io/packagist/dt/marksitko/laravel-unsplash.svg?style=flat-square)](https://packagist.org/packages/marksitko/laravel-unsplash)
 
 
-## Package is currently in development mode and not stable! 
-
 ## Install
 
 ``` bash
-$ composer require marksitko/laravel-unsplash:0.1.0-beta
+$ composer require marksitko/laravel-unsplash
 ```
 
 The package provides package discovery and Laravel will automatically register the service provider and facade. If you want add it manually you have to do it provide in your `config/app.php`
@@ -40,14 +38,15 @@ $ php artisan vendor:publish --tag=config
 ```
 
 ###### Optional
-If you wanna use Laravel-Unsplash with a database connector you have to publish the migration files.
+If you wanna use Laravel-Unsplash with the database connector you have to publish the migration files.
 ``` bash
 $ php artisan vendor:publish --tag=migrations
 ```
 It creates 2 migrations. One to store additional informations about stored image and one morph table to use it with the `HasUnsplashables` trait. 
 
 ## Configuration
-You must provide a unsplash api access key in your `.env` file
+You have to provide a unsplash api access key in your `.env` file. 
+[Read how to generate a Unsplash API key](https://unsplash.com/documentation#creating-a-developer-account)
 ```
 UNSPLASH_ACCESS_KEY=YOUR_GENERATED_API_KEY_FROM_UNSPLASH
 ```
@@ -173,6 +172,7 @@ Now when you execute `store()` on the Unsplash client, the image is stored in yo
 - the stored image name
 - author name
 - author link
+
 However, these informations are all required to use a unsplash photo on your website.
 
 **Example with Unsplash Client**
