@@ -1,6 +1,6 @@
 # Powerful Unsplash package for Laravel
 
-Provides a fluent api to use the Unsplash API within Larvel applications. Use public actions or store images directly in your storage and persists all copyright informations automatically with the databse connector.
+Provides a fluent api to use the Unsplash within Larvel applications. Use public actions or store images directly in your storage and persists all copyright informations automatically with the databse connector.
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/marksitko/laravel-unsplash.svg?style=flat-square)](https://packagist.org/packages/marksitko/laravel-unsplash)
 [![Build Status](https://img.shields.io/travis/marksitko/laravel-unsplash/master.svg?style=flat-square)](https://travis-ci.org/marksitko/laravel-unsplash)
@@ -14,7 +14,7 @@ Provides a fluent api to use the Unsplash API within Larvel applications. Use pu
 $ composer require marksitko/laravel-unsplash
 ```
 
-The package provides package discovery and Laravel will automatically register the service provider and facade. If you want add it manually you have to do it provide in your `config/app.php`
+Laravel-Unsplash comes with package discovery and Laravel will register the service provider and facade automatically. Just in case you wanna add it manually, you should provide it in `config/app.php`
 
 **Service provider**
 ``` php 

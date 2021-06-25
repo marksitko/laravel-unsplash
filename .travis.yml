@@ -6,6 +6,8 @@ php:
   - 7.4
 
 env:
+  global:
+    - XDEBUG_MODE=coverage
   matrix:
     - COMPOSER_FLAGS="--prefer-lowest"
     - COMPOSER_FLAGS=""

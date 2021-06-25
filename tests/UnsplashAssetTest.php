@@ -2,16 +2,15 @@
 
 namespace MarkSitko\LaravelUnsplash\Tests;
 
+use PDOException;
 use Orchestra\Testbench\TestCase;
 use Illuminate\Support\Facades\Config;
-use MarkSitko\LaravelUnsplash\Models\UnsplashAsset;
 use MarkSitko\LaravelUnsplash\Unsplash;
+use MarkSitko\LaravelUnsplash\Models\UnsplashAsset;
 use MarkSitko\LaravelUnsplash\UnsplashServiceProvider;
-use PDOException;
 
 class UnsplashAssetTest extends TestCase
 {
-
     /**
      * Setup the test environment.
      */
@@ -64,7 +63,7 @@ class UnsplashAssetTest extends TestCase
     /** @test */
     public function it_can_return_the_api_client()
     {
-         $this->assertInstanceOf(Unsplash::class, UnsplashAsset::api());
+        $this->assertInstanceOf(Unsplash::class, UnsplashAsset::api());
     }
 
     /** @test */
@@ -85,8 +84,8 @@ class UnsplashAssetTest extends TestCase
 
     protected function setupDatabase()
     {
-        include_once __DIR__.'/../database/migrations/2020_03_09_000000_create_unsplash_assets_table.php';
-        include_once __DIR__.'/../database/migrations/2020_03_09_000000_create_unsplashables_table.php';
+        include_once __DIR__.'/../database/migrations/create_unsplash_assets_table.php.stub';
+        include_once __DIR__.'/../database/migrations/create_unsplashables_table.php.stub';
 
         (new \CreateUnsplashAssetsTable())->up();
         (new \CreateUnsplashablesTable())->up();
