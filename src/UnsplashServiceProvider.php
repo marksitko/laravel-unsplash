@@ -20,7 +20,10 @@ class UnsplashServiceProvider extends ServiceProvider
             ], 'config');
 
             $this->publishes([
-                __DIR__.'/../database/migrations/' => database_path('migrations')
+                __DIR__.'/../database/migrations/create_unsplashables_table.php.stub' => database_path('migrations').'/'.date('Y_m_d_His').'_create_unsplashables_table.php',
+            ], 'migrations');
+            $this->publishes([
+                __DIR__.'/../database/migrations/create_unsplash_assets_table.php.stub' => database_path('migrations').'/'.date('Y_m_d_His').'_create_unsplash_assets_table.php',
             ], 'migrations');
         }
     }
