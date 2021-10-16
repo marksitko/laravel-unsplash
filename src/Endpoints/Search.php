@@ -8,8 +8,6 @@ trait Search
      * Search photos
      * Get a single page of photo results for a query.
      * @link https://unsplash.com/documentation#search-photos
-     *
-     * @return MarkSitko\LaravelUnsplash\Endpoints\Search
      */
     public function search()
     {
@@ -23,8 +21,6 @@ trait Search
      * Search collections
      * Get a single page of collection results for a query.
      * @link https://unsplash.com/documentation#search-collections
-     *
-     * @return MarkSitko\LaravelUnsplash\Endpoints\Search
      */
     public function searchCollections()
     {
@@ -38,8 +34,6 @@ trait Search
      * Search users
      * Get a single page of user results for a query.
      * @link https://unsplash.com/documentation#search-users
-     *
-     * @return MarkSitko\LaravelUnsplash\Endpoints\Search
      */
     public function searchUsers()
     {
