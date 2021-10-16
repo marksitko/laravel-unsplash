@@ -11,7 +11,6 @@ trait QueryBuilder
     /**
      * Page number to retrive.
      * @param int|string $param
-     * @return MarkSitko\LaravelUnsplash\Queries\QueryBuilder
      */
     public function page( $param = null )
     {
@@ -22,7 +21,6 @@ trait QueryBuilder
     /**
      * Number of items per page
      * @param int|string $param
-     * @return MarkSitko\LaravelUnsplash\Queries\QueryBuilder
      */
     public function perPage( $param = null )
     {
@@ -33,7 +31,6 @@ trait QueryBuilder
     /**
      * How to sort the photos.
      * @param int|string $param Valid values: latest, oldest, popular
-     * @return MarkSitko\LaravelUnsplash\Queries\QueryBuilder
      */
     public function orderBy( $param = null )
     {
@@ -47,7 +44,6 @@ trait QueryBuilder
     /**
      * Public collection ID(‘s) to filter selection. If multiple, comma-separated.
      * @param string $param
-     * @return MarkSitko\LaravelUnsplash\Queries\QueryBuilder
      */
     public function collections( $param = null )
     {
@@ -58,7 +54,6 @@ trait QueryBuilder
     /**
      * Limit selection to featured photos.
      * @param string $param
-     * @return MarkSitko\LaravelUnsplash\Queries\QueryBuilder
      */
     public function featured( $param = null )
     {
@@ -69,7 +64,6 @@ trait QueryBuilder
     /**
      * Limit selection to a single user.
      * @param string $param
-     * @return MarkSitko\LaravelUnsplash\Queries\QueryBuilder
      */
     public function username( $param = null )
     {
@@ -80,7 +74,6 @@ trait QueryBuilder
     /**
      * Filter search results by photo orientation.
      * @param string $param Valid values: landscape, portrait, and squarish
-     * @return MarkSitko\LaravelUnsplash\Queries\QueryBuilder
      */
     public function orientation( $param = null )
     {
@@ -91,7 +84,6 @@ trait QueryBuilder
     /**
      * Limit selection to photos matching a search term.
      * @param string $param
-     * @return MarkSitko\LaravelUnsplash\Queries\QueryBuilder
      */
     public function term( $param = null )
     {
@@ -102,7 +94,6 @@ trait QueryBuilder
     /**
      * The number of photos to return.
      * @param int|string $param min 1, max 30
-     * @return MarkSitko\LaravelUnsplash\Queries\QueryBuilder
      */
     public function count( $param = null )
     {
@@ -116,7 +107,6 @@ trait QueryBuilder
     /**
      * The public id of the photo.
      * @param int|string $param required
-     * @return MarkSitko\LaravelUnsplash\Queries\QueryBuilder
      */
     public function id( $param = null )
     {
@@ -127,7 +117,6 @@ trait QueryBuilder
     /**
      * The frequency of the stats.
      * @param string $param default days
-     * @return MarkSitko\LaravelUnsplash\Queries\QueryBuilder
      */
     public function resolution( $param = null )
     {
@@ -138,7 +127,6 @@ trait QueryBuilder
     /**
      * The amount of for each stat.
      * @param int|string $param
-     * @return MarkSitko\LaravelUnsplash\Queries\QueryBuilder
      */
     public function quantity( $param = null )
     {
@@ -152,7 +140,6 @@ trait QueryBuilder
     /**
      * Filter results by color.
      * @param string $param Valid values are: black_and_white, black, white, yellow, orange, red, purple, magenta, green, teal, and blue.
-     * @return MarkSitko\LaravelUnsplash\Queries\QueryBuilder
      */
     public function color( $param = null )
     {
@@ -163,7 +150,6 @@ trait QueryBuilder
     /**
      * Query for search terms
      * @param string $param
-     * @return MarkSitko\LaravelUnsplash\Queries\QueryBuilder
      */
     public function query( $param = null )
     {
