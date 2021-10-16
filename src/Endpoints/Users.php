@@ -10,7 +10,6 @@ trait Users
      * @link https://unsplash.com/documentation#get-a-users-public-profile
      *
      * @param string $username The user’s username. Required.
-     * @return MarkSitko\LaravelUnsplash\Endpoints\Users
      */
     public function user( $username )
     {
@@ -26,7 +25,6 @@ trait Users
      * @link https://unsplash.com/documentation#get-a-users-portfolio-link
      *
      * @param string $username The user’s username. Required.
-     * @return MarkSitko\LaravelUnsplash\Endpoints\Users
      */
     public function userPortfolio( $username )
     {
@@ -42,7 +40,6 @@ trait Users
      * @link https://unsplash.com/documentation#list-a-users-photos
      *
      * @param string $username The user’s username. Required.
-     * @return MarkSitko\LaravelUnsplash\Endpoints\Users
      */
     public function userPhotos( $username )
     {
@@ -58,7 +55,6 @@ trait Users
      * @link https://unsplash.com/documentation#list-a-users-liked-photos
      *
      * @param string $username The user’s username. Required.
-     * @return MarkSitko\LaravelUnsplash\Endpoints\Users
      */
     public function userLikes( $username )
     {
@@ -74,7 +70,6 @@ trait Users
      * @link https://unsplash.com/documentation#list-a-users-collections
      *
      * @param string $username The user’s username. Required.
-     * @return MarkSitko\LaravelUnsplash\Endpoints\Users
      */
     public function userCollections( $username )
     {
@@ -91,7 +86,6 @@ trait Users
      * @link https://unsplash.com/documentation#get-a-users-statistics
      *
      * @param string $username The user’s username. Required.
-     * @return MarkSitko\LaravelUnsplash\Endpoints\Users
      */
     public function userStatistics( $username )
     {
