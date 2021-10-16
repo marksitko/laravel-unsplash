@@ -8,8 +8,6 @@ trait Photos
      * List photos
      * Get a single page from the list of all photos.
      * @link https://unsplash.com/documentation#list-photos
-     *
-     * @return MarkSitko\LaravelUnsplash\Endpoints\Photos
      */
     public function photos()
     {
@@ -25,7 +23,6 @@ trait Photos
      * @link https://unsplash.com/documentation#get-a-photo
      *
      * @param string $id
-     * @return MarkSitko\LaravelUnsplash\Endpoints\Photos
      */
     public function photo( $id )
     {
@@ -38,8 +35,6 @@ trait Photos
     /**
      * Get a random photo
      * @link https://unsplash.com/documentation#get-a-random-photo
-     *
-     * @return MarkSitko\LaravelUnsplash\Endpoints\Photos
      */
     public function randomPhoto()
     {
@@ -54,7 +49,6 @@ trait Photos
      * @link https://unsplash.com/documentation#get-a-photos-statistics
      *
      * @param string $id
-     * @return MarkSitko\LaravelUnsplash\Endpoints\Photos
      */
     public function photosStatistics($id)
     {
@@ -69,7 +63,6 @@ trait Photos
      * @link https://unsplash.com/documentation#track-a-photo-download
      *
      * @param string $id
-     * @return MarkSitko\LaravelUnsplash\Endpoints\Photos
      */
     public function trackPhotoDownload($id)
     {
