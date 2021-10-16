@@ -8,8 +8,6 @@ trait Collections
      * List collections
      * Get a single page from the list of all collections.
      * @link https://unsplash.com/documentation#list-collections
-     *
-     * @return MarkSitko\LaravelUnsplash\Endpoints\Collections
      */
     public function collectionsList()
     {
@@ -23,8 +21,6 @@ trait Collections
      * List featured collections
      * Get a single page from the list of featured collections.
      * @link https://unsplash.com/documentation#list-featured-collections
-     *
-     * @return MarkSitko\LaravelUnsplash\Endpoints\Collections
      */
     public function featuredCollection()
     {
@@ -40,7 +36,6 @@ trait Collections
      * @link https://unsplash.com/documentation#get-a-collection
      *
      * @param int|string $id The collections’s ID. Required.
-     * @return MarkSitko\LaravelUnsplash\Endpoints\Collections
      */
     public function showCollection( $id )
     {
@@ -56,7 +51,6 @@ trait Collections
      * @link https://unsplash.com/documentation#get-a-collections-photos
      *
      * @param int|string $id The collections’s ID. Required.
-     * @return MarkSitko\LaravelUnsplash\Endpoints\Collections
      */
     public function showCollectionPhotos( $id )
     {
@@ -72,7 +66,6 @@ trait Collections
      * @link https://unsplash.com/documentation#list-a-collections-related-collections
      *
      * @param int|string $id The collections’s ID. Required.
-     * @return MarkSitko\LaravelUnsplash\Endpoints\Collections
      */
     public function showCollectionRelatedCollections( $id )
     {
