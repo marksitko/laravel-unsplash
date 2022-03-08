@@ -11,18 +11,18 @@
     "authors": [
         {
             "name": "Mark Sitko",
-            "email": "mark@sitko-designing.de",
+            "email": "hey@marksitko.de",
             "role": "Developer"
         }
     ],
     "require": {
-        "php": ">=7.2|>=8.0",
-        "guzzlehttp/guzzle": "^6.0|^7.0",
-        "illuminate/support": "^6.0|^7.0|^8.0"
+        "php": "^8.0",
+        "guzzlehttp/guzzle": "^7.0",
+        "illuminate/support": "^8.0|^9.0"
     },
     "require-dev": {
-        "orchestra/testbench": "^4.0|^5.0|^6.0",
-        "phpunit/phpunit": "^8.0|^9.0"
+        "orchestra/testbench": "^7.0",
+        "phpunit/phpunit": "^9.0"
     },
     "autoload": {
         "psr-4": {
@@ -48,7 +48,7 @@
                 "MarkSitko\\LaravelUnsplash\\UnsplashServiceProvider"
             ],
             "aliases": {
-                "Unsplash": "MarkSitko\\LaravelUnsplash\\UnsplashFacade"
+                "Unsplash": "MarkSitko\\LaravelUnsplash\\Facades\\Unsplash"
             }
         }
     }

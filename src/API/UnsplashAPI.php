@@ -20,7 +20,7 @@ trait UnsplashAPI
 
     /**
      * Associative array with the HTTP verb
-     * and the endpoint
+     * and the endpoint.
      *
      * @var array
      */

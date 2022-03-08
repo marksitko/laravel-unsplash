@@ -28,7 +28,7 @@ Laravel-Unsplash comes with package discovery and Laravel will register the serv
 ``` php 
 'aliases' => [
     //...
-    'Unsplash' => MarkSitko\LaravelUnsplash\UnsplashFacade::class,
+    'Unsplash' => MarkSitko\LaravelUnsplash\Facades\Unsplash::class,
 ];
 ```
 

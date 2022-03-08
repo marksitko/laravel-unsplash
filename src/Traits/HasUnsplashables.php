@@ -6,13 +6,10 @@ use MarkSitko\LaravelUnsplash\Models\UnsplashAsset;
 
 trait HasUnsplashables
 {
-
     /**
      * The booting method of the model.
-     *
-     * @return void
      */
-    protected static function boot()
+    protected static function boot(): void
     {
         parent::boot();
 
@@ -23,10 +20,9 @@ trait HasUnsplashables
     }
 
     /**
-     * Model may have multiple unsplash assets
-     * @return \Illuminate\Database\Eloquent\Relations\MorphToMany
+     * Model may have multiple unsplash assets.
      */
-    public function unsplash()
+    public function unsplash(): \Illuminate\Database\Eloquent\Relations\MorphToMany
     {
         return $this->morphToMany(UnsplashAsset::class, 'unsplashables');
     }

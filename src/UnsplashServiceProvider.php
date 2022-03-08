@@ -36,11 +36,6 @@ class UnsplashServiceProvider extends ServiceProvider
         // Automatically apply the package configuration
         $this->mergeConfigFrom(__DIR__.'/../config/unsplash.php', 'unsplash');
 
-        // Register the main class to use with the facade
-        $this->app->singleton('unsplash', function () {
-            return new Unsplash();
-        });
-
         // Bind main class to service container
         $this->app->bind(Unsplash::class, function () {
             return new Unsplash();

@@ -14,9 +14,9 @@ class HttpClient
     private $accessKey;
 
     /**
-    * Creates a new instance of HttpClient
-    * @return MarkSitko\LaravelUnsplash\Http\HttpClient
-    */
+     * Creates a new instance of HttpClient.
+     * @return MarkSitko\LaravelUnsplash\Http\HttpClient
+     */
     public function __construct()
     {
         $this->initalizeConfiguration()
@@ -26,14 +26,13 @@ class HttpClient
     }
 
     /**
-     * Initalize and store configuration values in class properties
-     * @return MarkSitko\LaravelUnsplash\Http\HttpClient
+     * Initalize and store configuration values in class properties.
      */
-    private function initalizeConfiguration()
+    private function initalizeConfiguration(): self
     {
         $this->accessKey = config('unsplash.access_key');
 
-        if ( !$this->accessKey ) {
+        if (! $this->accessKey) {
             throw new Exception('A Unsplash-API access key must be provided');
         }
 
@@ -41,10 +40,9 @@ class HttpClient
     }
 
     /**
-     * Instantiate the GuzzleHttp Client
-     * @return MarkSitko\LaravelUnsplash\Http\HttpClient
+     * Instantiate the GuzzleHttp Client.
      */
-    private function createClient()
+    private function createClient(): self
     {
         $this->client = new Client([
             'base_uri' => self::API_URL,

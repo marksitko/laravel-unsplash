@@ -3,8 +3,8 @@
 namespace MarkSitko\LaravelUnsplash;
 
 use Exception;
-use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Storage;
 use MarkSitko\LaravelUnsplash\API\UnsplashAPI;
 use MarkSitko\LaravelUnsplash\Http\HttpClient;
 use MarkSitko\LaravelUnsplash\Models\UnsplashAsset;
@@ -32,17 +32,15 @@ class Unsplash extends HttpClient
     /**
      * Guzzle response.
      */
-    protected $response;
+    protected \GuzzleHttp\Psr7\Response $response;
 
     /**
      * Storage disk to store photos.
      */
-    protected $storeInDatabase;
+    protected string $storeInDatabase;
 
     /**
      * Creates a new instance of Unsplash.
-     *
-     * @return MarkSitko\LaravelUnsplash\Unsplash
      */
     public function __construct()
     {
@@ -66,10 +64,8 @@ class Unsplash extends HttpClient
 
     /**
      * Returns the full http response.
-     *
-     * @return GuzzleHttp\Psr7\Response
      */
-    public function get()
+    public function get(): \GuzzleHttp\Psr7\Response
     {
         $this->buildResponse();
 
@@ -78,10 +74,8 @@ class Unsplash extends HttpClient
 
     /**
      * Returns the http response body.
-     *
-     * @return object
      */
-    public function toJson()
+    public function toJson(): mixed
     {
         $this->buildResponse();
 
@@ -90,10 +84,8 @@ class Unsplash extends HttpClient
 
     /**
      * Returns the http response body.
-     *
-     * @return array
      */
-    public function toArray()
+    public function toArray(): array
     {
         $this->buildResponse();
 
@@ -102,10 +94,8 @@ class Unsplash extends HttpClient
 
     /**
      * Returns the http response body as collection.
-     *
-     * @return \Illuminate\Support\Collection
      */
-    public function toCollection()
+    public function toCollection(): \Illuminate\Support\Collection
     {
         $this->buildResponse();
 
@@ -117,17 +107,15 @@ class Unsplash extends HttpClient
      *
      * @param string $name If no name is provided, a random 24 Charachter name will be generated
      * @param string $key  Defines the size of the retrieving photo
-     *
-     * @return string The stored photo name
      */
-    public function store($name = null, $key = 'small')
+    public function store($name = null, $key = 'small'): string
     {
         $response = $this->toArray();
-        if (!array_key_exists('urls', $response)) {
+        if (! array_key_exists('urls', $response)) {
             throw new Exception('Photo can not be stored. Certainly the "urls" key is missing or you try to store an photo while retrieving multiple photos.');
         }
 
-        if (!in_array($key, self::PHOTO_KEYS)) {
+        if (! in_array($key, self::PHOTO_KEYS)) {
             throw new Exception("Your provided key \"{$key}\" is an undefined accessor.");
         }
 
@@ -154,10 +142,8 @@ class Unsplash extends HttpClient
 
     /**
      * Builds the http request.
-     *
-     * @return MarkSitko\LaravelUnsplash\Unsplash
      */
-    protected function buildResponse()
+    protected function buildResponse(): self
     {
         $verb = $this->apiCall['verb'] ?? 'get';
         $this->response = $this->client->$verb("{$this->apiCall['endpoint']}?{$this->getQuery()}");
@@ -167,10 +153,8 @@ class Unsplash extends HttpClient
 
     /**
      * Initalize storage.
-     *
-     * @return MarkSitko\LaravelUnsplash\Unsplash
      */
-    private function initalizeConfiguration()
+    private function initalizeConfiguration(): self
     {
         $this->storage = Storage::disk(config('unsplash.disk', 'local'));
         $this->storeInDatabase = config('unsplash.store_in_database', false);
