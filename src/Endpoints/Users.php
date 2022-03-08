@@ -10,13 +10,13 @@ trait Users
      * @link https://unsplash.com/documentation#get-a-users-public-profile
      *
      * @param string $username The user’s username. Required.
-     * @return MarkSitko\LaravelUnsplash\Endpoints\Users
      */
-    public function user( $username )
+    public function user($username)
     {
         $this->apiCall = [
             'endpoint' => "users/{$username}",
         ];
+
         return $this;
     }
 
@@ -26,13 +26,13 @@ trait Users
      * @link https://unsplash.com/documentation#get-a-users-portfolio-link
      *
      * @param string $username The user’s username. Required.
-     * @return MarkSitko\LaravelUnsplash\Endpoints\Users
      */
-    public function userPortfolio( $username )
+    public function userPortfolio($username): self
     {
         $this->apiCall = [
             'endpoint' => "users/{$username}/portfolio",
         ];
+
         return $this;
     }
 
@@ -42,13 +42,13 @@ trait Users
      * @link https://unsplash.com/documentation#list-a-users-photos
      *
      * @param string $username The user’s username. Required.
-     * @return MarkSitko\LaravelUnsplash\Endpoints\Users
      */
-    public function userPhotos( $username )
+    public function userPhotos($username): self
     {
         $this->apiCall = [
             'endpoint' => "users/{$username}/photos",
         ];
+
         return $this;
     }
 
@@ -58,13 +58,13 @@ trait Users
      * @link https://unsplash.com/documentation#list-a-users-liked-photos
      *
      * @param string $username The user’s username. Required.
-     * @return MarkSitko\LaravelUnsplash\Endpoints\Users
      */
-    public function userLikes( $username )
+    public function userLikes($username)
     {
         $this->apiCall = [
             'endpoint' => "users/{$username}/likes",
         ];
+
         return $this;
     }
 
@@ -74,13 +74,13 @@ trait Users
      * @link https://unsplash.com/documentation#list-a-users-collections
      *
      * @param string $username The user’s username. Required.
-     * @return MarkSitko\LaravelUnsplash\Endpoints\Users
      */
-    public function userCollections( $username )
+    public function userCollections($username)
     {
         $this->apiCall = [
             'endpoint' => "users/{$username}/collections",
         ];
+
         return $this;
     }
 
@@ -91,14 +91,13 @@ trait Users
      * @link https://unsplash.com/documentation#get-a-users-statistics
      *
      * @param string $username The user’s username. Required.
-     * @return MarkSitko\LaravelUnsplash\Endpoints\Users
      */
-    public function userStatistics( $username )
+    public function userStatistics($username)
     {
         $this->apiCall = [
             'endpoint' => "users/{$username}/statistics",
         ];
+
         return $this;
     }
-
 }

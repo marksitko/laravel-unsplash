@@ -8,14 +8,13 @@ trait Photos
      * List photos
      * Get a single page from the list of all photos.
      * @link https://unsplash.com/documentation#list-photos
-     *
-     * @return MarkSitko\LaravelUnsplash\Endpoints\Photos
      */
-    public function photos()
+    public function photos(): self
     {
         $this->apiCall = [
             'endpoint' => 'photos',
         ];
+
         return $this;
     }
 
@@ -25,58 +24,56 @@ trait Photos
      * @link https://unsplash.com/documentation#get-a-photo
      *
      * @param string $id
-     * @return MarkSitko\LaravelUnsplash\Endpoints\Photos
      */
-    public function photo( $id )
+    public function photo($id): self
     {
         $this->apiCall = [
             'endpoint' => "photos/{$id}",
         ];
+
         return $this;
     }
 
     /**
-     * Get a random photo
+     * Get a random photo.
      * @link https://unsplash.com/documentation#get-a-random-photo
-     *
-     * @return MarkSitko\LaravelUnsplash\Endpoints\Photos
      */
-    public function randomPhoto()
+    public function randomPhoto(): self
     {
         $this->apiCall = [
             'endpoint' => 'photos/random',
         ];
+
         return $this;
     }
 
     /**
-     * Get a photo’s statistics
+     * Get a photo’s statistics.
      * @link https://unsplash.com/documentation#get-a-photos-statistics
      *
      * @param string $id
-     * @return MarkSitko\LaravelUnsplash\Endpoints\Photos
      */
-    public function photosStatistics($id)
+    public function photosStatistics($id): self
     {
         $this->apiCall = [
             'endpoint' => "photos/{$id}/statistics",
         ];
+
         return $this;
     }
 
     /**
-     * Track a photo download
+     * Track a photo download.
      * @link https://unsplash.com/documentation#track-a-photo-download
      *
      * @param string $id
-     * @return MarkSitko\LaravelUnsplash\Endpoints\Photos
      */
-    public function trackPhotoDownload($id)
+    public function trackPhotoDownload($id): self
     {
         $this->apiCall = [
-            'endpoint' => "photos/{$id}/download"
+            'endpoint' => "photos/{$id}/download",
         ];
+
         return $this;
     }
-
 }
