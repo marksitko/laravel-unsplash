@@ -107,8 +107,9 @@ class Unsplash extends HttpClient
      *
      * @param string $name If no name is provided, a random 24 Charachter name will be generated
      * @param string $key  Defines the size of the retrieving photo
+     * @return string|UnsplashAsset If UNSPLASH_STORE_IN_DATABASE is set to true it returns an instance of UnsplashAsset otherwise a string of the name of the stored image
      */
-    public function store($name = null, $key = 'small'): string
+    public function store($name = null, $key = 'small'): string | UnsplashAsset
     {
         $response = $this->toArray();
         if (! array_key_exists('urls', $response)) {
