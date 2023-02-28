@@ -8,6 +8,7 @@ use MarkSitko\LaravelUnsplash\Endpoints\Photos;
 use MarkSitko\LaravelUnsplash\Endpoints\Search;
 use MarkSitko\LaravelUnsplash\Queries\QueryBuilder;
 use MarkSitko\LaravelUnsplash\Endpoints\Collections;
+use MarkSitko\LaravelUnsplash\Endpoints\Topics;
 
 trait UnsplashAPI
 {
@@ -16,6 +17,7 @@ trait UnsplashAPI
         Photos,
         Search,
         Collections,
+        Topics,
         Stats;
 
     /**

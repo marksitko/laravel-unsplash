@@ -144,6 +144,23 @@ $showCollectionRelatedCollections = Unsplash::showCollectionRelatedCollections()
     ->toJson();
 ```
 
+**Topics**
+``` php
+$topicsList = Unsplash::topicsList()
+    ->page($pageNumber)
+    ->perPage($itemsPerPage)
+    ->toJson();
+
+$showTopic = Unsplash::showTopic()
+    ->id($topicIdOrSlug)
+    ->toJson();
+
+$showTopicPhotos = Unsplash::showTopicPhotos()
+    ->id($topicIdOrSlug)
+    ->toJson();
+```
+
+
 **Stats**
 ``` php
 $totalStats = Unsplash::totalStats()->toJson();

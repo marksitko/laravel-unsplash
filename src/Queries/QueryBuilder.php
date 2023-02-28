@@ -168,6 +168,19 @@ trait QueryBuilder
         return $this;
     }
 
+    /* ###### Topics params ###### */
+
+    /**
+     * Query for ids.
+     * @param string $param
+     */
+    public function ids($param = null): self
+    {
+        $this->query['ids'] = $param ?? null;
+
+        return $this;
+    }
+
     public function getQuery(): string
     {
         return http_build_query($this->query, '', '&');
