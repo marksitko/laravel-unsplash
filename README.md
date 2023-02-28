@@ -17,7 +17,7 @@ $ composer require marksitko/laravel-unsplash
 Laravel-Unsplash comes with package discovery and Laravel will register the service provider and facade automatically. Just in case you wanna add it manually, you should provide it in `config/app.php`
 
 **Service provider**
-``` php 
+``` php
 'providers' => [
     //...
     MarkSitko\LaravelUnsplash\UnsplashServiceProvider::class,
@@ -25,7 +25,7 @@ Laravel-Unsplash comes with package discovery and Laravel will register the serv
 ```
 
 **Facade**
-``` php 
+``` php
 'aliases' => [
     //...
     'Unsplash' => MarkSitko\LaravelUnsplash\Facades\Unsplash::class,
@@ -42,10 +42,10 @@ If you wanna use Laravel-Unsplash with the database connector you have to publis
 ``` bash
 $ php artisan vendor:publish --tag=migrations
 ```
-It creates 2 migrations. One to store additional informations about stored image and one morph table to use it with the `HasUnsplashables` trait. 
+It creates 2 migrations. One to store additional informations about stored image and one morph table to use it with the `HasUnsplashables` trait.
 
 ## Configuration
-You have to provide a unsplash api access key in your `.env` file. 
+You have to provide a unsplash api access key in your `.env` file.
 [Read how to generate a Unsplash API key](https://unsplash.com/documentation#creating-a-developer-account)
 ```
 UNSPLASH_ACCESS_KEY=YOUR_GENERATED_API_KEY_FROM_UNSPLASH
@@ -66,7 +66,7 @@ UNSPLASH_STORAGE_DISK=YOUR_STORAGE_DISC
 Take a look at the full Unsplash API documentation https://unsplash.com/documentation
 
 **Random Photos**
-``` php 
+``` php
 // Returns the http response body.
 $twoRandomPhotosOfSomePeoples = Unsplash::randomPhoto()
     ->orientation('portrait')
@@ -84,7 +84,7 @@ $theNameFromTheStoredPhoto = Unsplash::randomPhoto()
 ```
 
 **Photos**
-``` php 
+``` php
 $photos = Unsplash::photos()->toJson();
 $photo = Unsplash::photo($id)->toJson();
 $photosStatistics = Unsplash::photosStatistics($id)->toJson();
@@ -92,7 +92,7 @@ $trackPhotoDownload = Unsplash::trackPhotoDownload($id)->toJson();
 ```
 
 **Users**
-``` php 
+``` php
 $user = Unsplash::user($username)->toJson();
 $userPortfolio = Unsplash::userPortfolio($username)->toJson();
 $userPhotos = Unsplash::userPhotos($username)->toJson();
@@ -102,7 +102,7 @@ $userStatistics = Unsplash::userStatistics($username)->toJson();
 ```
 
 **Search**
-``` php 
+``` php
 $search = Unsplash::search()
     ->term('buildings')
     ->color('black_and_white')
@@ -120,7 +120,7 @@ $searchUsers = Unsplash::searchUsers()
 ```
 
 **Collections**
-``` php 
+``` php
 $collectionsList = Unsplash::collectionsList()
     ->page($pageNumber)
     ->perPage($itemsPerPage)
@@ -145,7 +145,7 @@ $showCollectionRelatedCollections = Unsplash::showCollectionRelatedCollections()
 ```
 
 **Stats**
-``` php 
+``` php
 $totalStats = Unsplash::totalStats()->toJson();
 $monthlyStats = Unsplash::monthlyStats()->toJson();
 ```
@@ -167,7 +167,7 @@ When migration is successfull, you have to adjust the `.env`
 UNSPLASH_STORE_IN_DATABASE=true
 ```
 
-Now when you execute `store()` on the Unsplash client, the image is stored in your provided disc and informations like 
+Now when you execute `store()` on the Unsplash client, the image is stored in your provided disc and informations like
 - the unsplash photo id
 - the stored image name
 - author name
@@ -176,14 +176,14 @@ Now when you execute `store()` on the Unsplash client, the image is stored in yo
 However, these informations are all required to use a unsplash photo on your website.
 
 **Example with Unsplash Client**
-``` php 
+``` php
 // Returns the created unsplash asset record
 $databaseRecord = Unsplash::randomPhoto()->store();
 ```
 
 You are now also able to use the build in `UnsplashAsset` Model
 **Example with UnsplashAsset Model**
-``` php 
+``` php
 // Returns the created unsplash asset record
 $databaseRecord = UnsplashAsset::api()->randomPhoto()->store();
 
@@ -194,7 +194,7 @@ $unsplashAsset = UnsplashAsset::find($id);
 You can also use the `HasUnsplashables` Trait on any model.
 
 **Example with HasUnsplashables Trait on the User Model**
-``` php 
+``` php
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use MarkSitko\LaravelUnsplash\Traits\HasUnsplashables;
 
@@ -207,7 +207,7 @@ class User extends Authenticatable
 ```
 
 Now you are able to use it like:
-``` php 
+``` php
 // store the unsplash asset in a morphToMany relation
 $unsplashAsset = Unsplash::randomPhoto()->store();
 User::unsplash()->save($unsplashAsset);
