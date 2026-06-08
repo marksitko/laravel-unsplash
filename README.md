@@ -3,7 +3,7 @@
 Provides a fluent api to use the Unsplash within Larvel applications. Use public actions or store images directly in your storage and persists all copyright informations automatically with the databse connector.
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/marksitko/laravel-unsplash.svg?style=flat-square)](https://packagist.org/packages/marksitko/laravel-unsplash)
-[![Build Status](https://img.shields.io/travis/marksitko/laravel-unsplash/master.svg?style=flat-square)](https://travis-ci.org/marksitko/laravel-unsplash)
+[![Tests](https://img.shields.io/github/actions/workflow/status/marksitko/laravel-unsplash/tests.yml?branch=master&label=tests&style=flat-square)](https://github.com/marksitko/laravel-unsplash/actions/workflows/tests.yml)
 [![Quality Score](https://img.shields.io/scrutinizer/g/marksitko/laravel-unsplash.svg?style=flat-square)](https://scrutinizer-ci.com/g/marksitko/laravel-unsplash)
 [![Total Downloads](https://img.shields.io/packagist/dt/marksitko/laravel-unsplash.svg?style=flat-square)](https://packagist.org/packages/marksitko/laravel-unsplash)
 

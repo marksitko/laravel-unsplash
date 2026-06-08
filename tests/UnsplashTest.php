@@ -3,6 +3,7 @@
 namespace MarkSitko\LaravelUnsplash\Tests;
 
 use Orchestra\Testbench\TestCase;
+use PHPUnit\Framework\Attributes\Test;
 use Illuminate\Support\Facades\Config;
 use MarkSitko\LaravelUnsplash\Unsplash;
 use MarkSitko\LaravelUnsplash\UnsplashServiceProvider;
@@ -25,7 +26,7 @@ class UnsplashTest extends TestCase
         return [UnsplashServiceProvider::class];
     }
 
-    /** @test */
+    #[Test]
     public function it_provides_photo_access_keys_as_constants()
     {
         $this->assertEquals(

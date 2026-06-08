@@ -3,6 +3,7 @@
 namespace MarkSitko\LaravelUnsplash\Tests;
 
 use Orchestra\Testbench\TestCase;
+use PHPUnit\Framework\Attributes\Test;
 use Illuminate\Support\Facades\Config;
 use MarkSitko\LaravelUnsplash\Http\HttpClient;
 use MarkSitko\LaravelUnsplash\UnsplashServiceProvider;
@@ -15,7 +16,7 @@ class HttpClientTest extends TestCase
         return [UnsplashServiceProvider::class];
     }
 
-    /** @test */
+    #[Test]
     public function it_must_provide_an_api_access_key()
     {
         Config::set('unsplash.access_key', 'ABCD1234');
@@ -32,7 +33,7 @@ class HttpClientTest extends TestCase
         $httpClient = new HttpClient;
     }
 
-    /** @test */
+    #[Test]
     public function it_provides_the_api_url_as_constants()
     {
         $this->assertEquals(HttpClient::API_URL, 'https://api.unsplash.com/');
