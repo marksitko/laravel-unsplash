@@ -4,6 +4,7 @@ namespace MarkSitko\LaravelUnsplash\Tests;
 
 use PDOException;
 use Orchestra\Testbench\TestCase;
+use PHPUnit\Framework\Attributes\Test;
 use Illuminate\Support\Facades\Config;
 use MarkSitko\LaravelUnsplash\Unsplash;
 use MarkSitko\LaravelUnsplash\Models\UnsplashAsset;
@@ -28,7 +29,7 @@ class UnsplashAssetTest extends TestCase
         return [UnsplashServiceProvider::class];
     }
 
-    /** @test */
+    #[Test]
     public function it_has_these_massasignable_values()
     {
         $this->assertCount(0, UnsplashAsset::all());
@@ -43,7 +44,7 @@ class UnsplashAssetTest extends TestCase
         $this->assertCount(1, UnsplashAsset::all());
     }
 
-    /** @test */
+    #[Test]
     public function it_throws_an_pdo_exception_when_a_name_is_used_multiple_times()
     {
         $data = [
@@ -60,13 +61,13 @@ class UnsplashAssetTest extends TestCase
         UnsplashAsset::create($data);
     }
 
-    /** @test */
+    #[Test]
     public function it_can_return_the_api_client()
     {
         $this->assertInstanceOf(Unsplash::class, UnsplashAsset::api());
     }
 
-    /** @test */
+    #[Test]
     public function it_can_return_the_full_copyright_link()
     {
         $asset = UnsplashAsset::create([
@@ -84,11 +85,11 @@ class UnsplashAssetTest extends TestCase
 
     protected function setupDatabase()
     {
-        include_once __DIR__.'/../database/migrations/create_unsplash_assets_table.php.stub';
-        include_once __DIR__.'/../database/migrations/create_unsplashables_table.php.stub';
+        $assets = include __DIR__.'/../database/migrations/create_unsplash_assets_table.php.stub';
+        $unsplashables = include __DIR__.'/../database/migrations/create_unsplashables_table.php.stub';
 
-        (new \CreateUnsplashAssetsTable())->up();
-        (new \CreateUnsplashablesTable())->up();
+        $assets->up();
+        $unsplashables->up();
 
         return $this;
     }
