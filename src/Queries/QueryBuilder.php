@@ -158,6 +158,17 @@ trait QueryBuilder
     }
 
     /**
+     * ISO 639-1 language code of the search query.
+     * @param string $param Valid values: en, nl, ... Optional, default en.
+     */
+    public function lang($param = null): self
+    {
+        $this->query['lang'] = $param ?? null;
+
+        return $this;
+    }
+
+    /**
      * Query for search terms.
      * @param string $param
      */
