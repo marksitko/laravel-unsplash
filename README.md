@@ -109,6 +109,11 @@ $search = Unsplash::search()
     ->orientation('squarish')
     ->toJson();
 
+$search = Unsplash::search()
+    ->term('immeubles')
+    ->lang('fr')
+    ->toJson();
+
 $searchCollections = Unsplash::searchCollections()
     ->query('events')
     ->page($pageNumber)
